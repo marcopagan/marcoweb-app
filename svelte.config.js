@@ -1,8 +1,8 @@
-//import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
-/*const config = {
+const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
@@ -13,13 +13,13 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter()
 	}
-};*/
+};
 
 
-import adapter from '@sveltejs/adapter-static';
+//import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
+/*const config = {
 	kit: {
 		appDir: 'app',
 		adapter: adapter({
@@ -30,6 +30,6 @@ const config = {
 		}
 	},
 	preprocess: vitePreprocess()
-};
+};*/
 
 export default config;
