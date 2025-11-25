@@ -48,7 +48,8 @@
     --live: #151815;
     --permaborder: #869280;
     --perma: #111111;
-    --gridTheme: url('gridDark.svg');
+    --gridLight: url('gridLight.svg');
+    --gridDark: url('gridDark.svg');
 
     --invalid: #ff3713;
     --s: 1rem;
@@ -81,7 +82,8 @@ ul{list-style-position: inside; padding: 0;}
 
 /* BACKGROUND */
 #background{width: 100vw; height: 100vh; position: absolute}
-.bgrid{background-image: var(--gridTheme); background-repeat: repeat}
+.bgrid-dark{background-image: var(--gridDark); background-repeat: repeat}
+.bgrid-light{background-image: var(--gridLight); background-repeat: repeat}
 .mono{font-family: 'APL386', monospace; font-size: var(--s); letter-spacing: -.05rem;}
 
 .recto a{
