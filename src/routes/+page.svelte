@@ -51,7 +51,7 @@
     m1 = { x: x, y: y };
     tempRecto = convertCoordinates(m1.x, m1.y, m1.x, m1.y, options.snapToGrid);
     liverecto = { ...liverecto, x: tempRecto.x, y: tempRecto.y };
-    //if (event instanceof TouchEvent) event.preventDefault();
+    if (event instanceof TouchEvent) event.preventDefault();
   }
 
   function handleMove(event: MouseEvent | TouchEvent) {
@@ -73,7 +73,7 @@
         wdt: tempRecto.wdt,
         hgt: tempRecto.hgt,
       };
-      //if (event instanceof TouchEvent) event.preventDefault();
+      if (event instanceof TouchEvent) event.preventDefault();
     }
   }
 
@@ -93,7 +93,7 @@
         counterId += 1;
       } else if (liveIsValid) {
         // OVERLAP RECTOS
-        let index = counterId % STARTING_RECTOS.length;
+        /*let index = counterId % STARTING_RECTOS.length;
         let tRecto = {
           ...STARTING_RECTOS[index],
           id: permarectos.length + counterId,
@@ -103,10 +103,10 @@
           hgt: tempRecto.hgt,
         };
         permarectos.push(tRecto);
-        counterId += 1;
+        counterId += 1;*/
 
         // REPLACE RECTOS
-        /*let index = counterId % STARTING_RECTOS.length;
+        let index = counterId % STARTING_RECTOS.length;
         permarectos[counterId - STARTING_RECTOS.length].visibility = false;
         let tRecto = {
           ...STARTING_RECTOS[index],
@@ -116,7 +116,7 @@
           hgt: tempRecto.hgt,
         };
         permarectos.push(tRecto);
-        counterId += 1;*/
+        counterId += 1;
       }
       m1 = { x: 0, y: 0 };
       m2 = { x: 0, y: 0 };
@@ -294,7 +294,7 @@
     span {
       font-family: "APL386", monospace;
       text-transform: uppercase;
-      font-size: 1rem;
+      font-size: var(--s);
       letter-spacing: -0.05rem;
     }
     &:hover {

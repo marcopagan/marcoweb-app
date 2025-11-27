@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { STEP } from "$lib/rectolib";
   import { onMount, type Snippet } from "svelte";
   let {
     children,
@@ -34,6 +35,11 @@
   class={`recto recto-${type}`}
   style="transform: translate({x}px, {y}px); width: {wdt.toString()}px; height: {hgt.toString()}px"
 >
+  {#if type === "live" || type === "invalid"}
+    <span class="recto-numbers">
+      {Math.floor(wdt / STEP)}x{Math.floor(hgt / STEP)}</span
+    >
+  {/if}
   <div class="recto-inside">
     {@render children()}
   </div>
@@ -42,7 +48,7 @@
 <style>
   .recto {
     font-family: "TimesNewerRoman", "Times New Roman", Times, serif;
-    font-size: 1.15rem;
+    font-size: var(--m);
     text-rendering: optimizeSpeed;
     border: 2px solid var(--permaborder);
     background-color: var(--perma);
@@ -63,15 +69,29 @@
   .recto-live {
     border-color: var(--liveborder);
     background-color: var(--live);
+    .recto-numbers {
+      color: var(--liveborder);
+    }
   }
   .recto-invalid {
     border-color: var(--invalid);
     background-color: var(--live);
+    .recto-numbers {
+      color: var(--invalid);
+    }
   }
   .recto-transparent {
     border-color: transparent;
     background-color: transparent;
     animation: toperma 0.4s ease-out 0s 1 alternate;
     transition: all 0.4s;
+  }
+  .recto-numbers {
+    position: absolute;
+    top: -1.1rem;
+    left: -0.05rem;
+    font-size: var(--xs);
+    font-family: "APL386", monospace;
+    text-transform: uppercase;
   }
 </style>

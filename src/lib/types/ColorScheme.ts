@@ -7,4 +7,5 @@ export type ColorScheme = {
     live: string,
     permaborder: string,
     perma:string,
+    invalid: string
 }

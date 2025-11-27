@@ -130,7 +130,7 @@
     background-color: transparent;
     color: var(--liveborder);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+    font-size: var(--m);
     border-radius: 0.3rem;
     width: 100%;
     padding: 0.25rem;

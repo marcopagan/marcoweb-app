@@ -8,7 +8,8 @@ const defaultDark = {
     liveborder: '#d2fb85',
     live: '#151815',
     permaborder: '#869280',
-    perma:'#111111'
+    perma:'#111111',
+    invalid: '#ff3713'
 }
 
 /*const defaultLight = {
@@ -19,7 +20,8 @@ const defaultDark = {
     liveborder: '#d2fb85',
     live: '#c5c5c4',
     permaborder: '#797e76ff',
-    perma:'#d0d0d0'
+    perma:'#d0d0d0',
+    invalid: '#ff00ff'
 }*/
 
 /*const greenOrange = {
@@ -30,7 +32,8 @@ const defaultDark = {
     liveborder: '#98bcb2',
     live: '#391148',
     permaborder: '#1A8163',
-    perma:'#391148'
+    perma:'#391148',
+    invalid: '#ff00ff'
 }*/
 
 const lightNice = {
@@ -41,7 +44,8 @@ const lightNice = {
     liveborder: '#4e02feff',
     live: '#9368ff50',
     permaborder: '#858585',
-    perma:'#e0e0e050'
+    perma:'#e0e0e050',
+    invalid: '#ff00ff'
 }
 
 const darkGreen_PurpleAccent = {
@@ -53,7 +57,8 @@ const darkGreen_PurpleAccent = {
     live: '#0b0a11',
     //permaborder: '#37544c',
     permaborder: '#73ad9dff',
-    perma:'#131a18'
+    perma:'#131a18',
+    invalid: '#ff3effAA'
 }
 
 /*const darkGreen_ThatILike = {
@@ -64,7 +69,8 @@ const darkGreen_PurpleAccent = {
     liveborder: '#5a4d45',
     live: '#110e0d',
     permaborder: '#37544c',
-    perma:'#131a18'
+    perma:'#131a18',
+    invalid: '#ff00ff'
 }*/
 
 const light1 = {
@@ -77,7 +83,8 @@ const light1 = {
     live: 'HoneyDew',
     //permaborder: '#afb3a8',
     permaborder: '#515c2fff',
-    perma:'#e1efd5'
+    perma:'#e1efd5',
+    invalid: '#832b2bAA'
 }
 
 /*const darkOriginal = {
@@ -88,7 +95,8 @@ const light1 = {
     liveborder: '#550cca',
     live: '#550cca22',
     permaborder: '#0064ff',
-    perma:'#0064ff22'
+    perma:'#0064ff22',
+    invalid: '#ff00ff'
 }*/
 
 const brownRed = {
@@ -99,7 +107,8 @@ const brownRed = {
     liveborder: '#aaa',
     live: '#271e1b',
     permaborder: '#ff0022',
-    perma:'#291c1c'
+    perma:'#291c1c',
+    invalid: '#ff0022'
 }
 
 /*const lili = {
@@ -110,7 +119,8 @@ const brownRed = {
     liveborder: '#a19a9aff',
     live: 'rgba(92, 92, 92, 0)',
     permaborder: '#000000ff',
-    perma:'#69191900'
+    perma:'#69191900',
+    invalid: '#ff00ff'
 }*/
 
 /*const neutral = {
@@ -121,7 +131,8 @@ const brownRed = {
     liveborder: '#AAAAAA',
     live: '#00000000',
     permaborder: '#777777',
-    perma:'#00000000'
+    perma:'#00000000',
+    invalid: '#ff00ff'
 }*/
 
 export const themes:ColorScheme[] = [defaultDark, light1, brownRed, lightNice, darkGreen_PurpleAccent];
