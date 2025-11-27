@@ -93,13 +93,20 @@
         counterId += 1;
       } else if (liveIsValid) {
         // OVERLAP RECTOS
-        /*let index = counterId % STARTING_RECTOS.length;
-                let tRecto = {...STARTING_RECTOS[index], id: permarectos.length + counterId, x: tempRecto.x, y: tempRecto.y, wdt: tempRecto.wdt, hgt: tempRecto.hgt}
-                permarectos.push(tRecto);
-                counterId += 1;*/
+        let index = counterId % STARTING_RECTOS.length;
+        let tRecto = {
+          ...STARTING_RECTOS[index],
+          id: permarectos.length + counterId,
+          x: tempRecto.x,
+          y: tempRecto.y,
+          wdt: tempRecto.wdt,
+          hgt: tempRecto.hgt,
+        };
+        permarectos.push(tRecto);
+        counterId += 1;
 
         // REPLACE RECTOS
-        let index = counterId % STARTING_RECTOS.length;
+        /*let index = counterId % STARTING_RECTOS.length;
         permarectos[counterId - STARTING_RECTOS.length].visibility = false;
         let tRecto = {
           ...STARTING_RECTOS[index],
@@ -109,7 +116,7 @@
           hgt: tempRecto.hgt,
         };
         permarectos.push(tRecto);
-        counterId += 1;
+        counterId += 1;*/
       }
       m1 = { x: 0, y: 0 };
       m2 = { x: 0, y: 0 };

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "APL386";
-  src: url('APL386.ttf') format('truetype');
+  src: url('/APL386.ttf') format('truetype');
 }
 
 @font-face {
@@ -48,8 +48,8 @@
     --live: #151815;
     --permaborder: #869280;
     --perma: #111111;
-    --gridLight: url('gridLight.svg');
-    --gridDark: url('gridDark.svg');
+    --gridLight: url('/gridLight.svg');
+    --gridDark: url('/gridDark.svg');
 
     --invalid: #ff3713;
     --s: 1rem;
