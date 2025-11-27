@@ -86,6 +86,9 @@
     animation: toperma 0.4s ease-out 0s 1 alternate;
     transition: all 0.4s;
   }
+  .recto-inside {
+    max-width: 75vw;
+  }
   .recto-numbers {
     position: absolute;
     top: -1.1rem;
