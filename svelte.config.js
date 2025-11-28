@@ -1,7 +1,7 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
-import adapter from '@sveltejs/adapter-auto';
+/*import adapter from '@sveltejs/adapter-auto';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
@@ -13,10 +13,10 @@ const config = {
 		// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 		adapter: adapter()
 	}
-};
+};*/
 
 
-/*import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-static';
 const config = {
 	kit: {
 		appDir: 'app',
@@ -28,6 +28,6 @@ const config = {
 		}
 	},
 	preprocess: vitePreprocess()
-};*/
+};
 
 export default config;
