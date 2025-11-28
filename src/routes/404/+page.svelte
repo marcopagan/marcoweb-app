@@ -21,7 +21,7 @@
       hgt: 48,
       visibility: true,
       content:
-        "<p><h3>404 Page Not found</h3><a href='https://marcopagan.com'>Go back to the homepage</a></p>",
+        "<p><h3>404 Page Not found</h3><a href='https://www.marcopagan.com'>Go back to the homepage</a></p>",
     },
   ];
   // VARIABLES
