@@ -48,16 +48,15 @@
   let permarectos: RectoType[] = $state([]);
 
   // FUNCTIONS
-  function handleDown(event: MouseEvent | TouchEvent) {
+  function handleDown(event: PointerEvent) {
     isDraggable = true;
     const { x, y } = getCoordinates(event);
     m1 = { x: x, y: y };
     tempRecto = convertCoordinates(m1.x, m1.y, m1.x, m1.y, options.snapToGrid);
     liverecto = { ...liverecto, x: tempRecto.x, y: tempRecto.y };
-    if (event instanceof TouchEvent) event.preventDefault();
   }
 
-  function handleMove(event: MouseEvent | TouchEvent) {
+  function handleMove(event: PointerEvent) {
     if (isDraggable) {
       const { x, y } = getCoordinates(event);
       m2 = { x: x, y: y };
@@ -76,11 +75,10 @@
         wdt: tempRecto.wdt,
         hgt: tempRecto.hgt,
       };
-      if (event instanceof TouchEvent) event.preventDefault();
     }
   }
 
-  function handleUp(event: MouseEvent | TouchEvent) {
+  function handleUp() {
     if (isDraggable) {
       isDraggable = false;
       liverecto = { ...liverecto, x: -100, y: -100, wdt: 0, hgt: 0 };
@@ -161,12 +159,9 @@
     id="foreground"
     role="button"
     tabindex="0"
-    onmousedown={handleDown}
-    onmousemove={handleMove}
-    onmouseup={handleUp}
-    ontouchstart={handleDown}
-    ontouchmove={handleMove}
-    ontouchend={handleUp}
+    onpointerdown={handleDown}
+    onpointermove={handleMove}
+    onpointerup={handleUp}
   >
     <Recto
       id="r-{liverecto.id}"
