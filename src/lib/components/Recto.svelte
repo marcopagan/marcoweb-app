@@ -58,6 +58,7 @@
     line-height: 1.2;
     min-width: fit-content;
     min-height: fit-content;
+    display: table;
     letter-spacing: -0.01rem;
   }
   .recto-perma {
