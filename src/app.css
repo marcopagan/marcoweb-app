@@ -79,6 +79,7 @@ ul{list-style-position: inside; padding: 0;}
   height: 100vh;
   position: absolute;
   z-index: 0;
+  touch-action: none;
 }
 
 /* BACKGROUND */
@@ -122,6 +123,8 @@ h3{
   letter-spacing: -.1rem;
   
 }
+
+
 
 @media (max-width: 900px) {
   :root {

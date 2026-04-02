@@ -3,12 +3,7 @@
   const { data } = $props();
   const { STARTING_RECTOS } = data;
   import type { RectoType } from "$lib/types/RectoType";
-  import {
-    STEP,
-    snap,
-    getCoordinates,
-    convertCoordinates,
-  } from "$lib/rectolib";
+  import { STEP, getCoordinates, convertCoordinates } from "$lib/rectolib";
   import Recto from "$lib/components/Recto.svelte";
   //import Drawer from '$lib/components/Drawer.svelte';
   import OptionsBox from "$lib/components/OptionsBox.svelte";
@@ -18,11 +13,14 @@
   import { browser } from "$app/environment";
   import type { AppOptions } from "$lib/types/AppOptions.js";
   import { onMount } from "svelte";
+  import RectoToast from "$lib/components/RectoToast.svelte";
 
   // CONSTANTS
   const localOptions = useLocalStorage("options", options);
+  const toastTimeout = 4000;
   // VARIABLES
   let optionsLoaded = $state(false);
+  let toastVisibility = $state(false);
   // Windows properties
   let innerWidth = $state(0);
   let innerHeight = $state(0);
@@ -62,7 +60,7 @@
         m1.y,
         m2.x,
         m2.y,
-        options.snapToGrid
+        options.snapToGrid,
       );
       liveIsValid = tempRecto.wdt >= STEP && tempRecto.hgt >= STEP * 2;
       liverecto = {
@@ -141,6 +139,17 @@
       document.documentElement.style.setProperty(`--${key}`, String(value));
     }
   }
+
+  function handleToast() {
+    setTimeout(() => {
+      toastVisibility = true;
+    }, 200);
+
+    setTimeout(() => {
+      toastVisibility = false;
+      options.welcomeToast = false;
+    }, toastTimeout);
+  }
   // ONMOUNT
   onMount(() => {
     if (browser) {
@@ -151,6 +160,7 @@
         options.showBorder = storedOptions.showBorder;
         options.showGrid = storedOptions.showGrid;
         options.snapToGrid = storedOptions.showGrid;
+        options.welcomeToast = storedOptions.welcomeToast;
       }
       optionsLoaded = true;
     }
@@ -158,6 +168,7 @@
   // EFFECTS
   $effect(() => updateTheme(options.colorScheme));
   $effect(() => localOptions.set(options));
+  $effect(() => handleToast());
 </script>
 
 <svelte:window bind:innerWidth bind:innerHeight />
@@ -188,7 +199,7 @@
       hgt={liverecto.hgt}><p style="display: none"></p></Recto
     >
 
-    {#each permarectos as recto}
+    {#each permarectos as recto (recto)}
       {#if recto.content === "BUTTON" && recto.visibility}
         <Recto
           id="r-{recto.id}"
@@ -216,6 +227,7 @@
           wdt={recto.wdt}
           hgt={recto.hgt}
         >
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html recto.content}
         </Recto>
       {/if}
@@ -232,6 +244,9 @@
 	<Drawer projects={projects}/>
 </div>-->
   <OptionsBox />
+  {#if toastVisibility && options.welcomeToast}
+    <RectoToast />
+  {/if}
 {/if}
 
 <style>

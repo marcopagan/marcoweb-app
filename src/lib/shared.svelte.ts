@@ -8,5 +8,6 @@ export const options:AppOptions = $state({
     showGrid: true,
     snapToGrid: true,
     openDrawer: false,
-    colorScheme: themes[0]
+    colorScheme: themes[0],
+    welcomeToast: true
 });

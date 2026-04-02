@@ -28,7 +28,7 @@
 	        OPEN DRAWER
         </label>-->
     <section class="cs-wrapper">
-      {#each themes as theme, index}
+      {#each themes as theme, index (theme.themeName)}
         <button
           onclick={() => (options.colorScheme = theme)}
           class={options.colorScheme.themeName == theme.themeName &&

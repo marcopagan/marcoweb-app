@@ -6,5 +6,6 @@ export type AppOptions = {
     showGrid: boolean,
     snapToGrid: boolean,
     openDrawer: boolean,
-    colorScheme: ColorScheme
+    colorScheme: ColorScheme,
+    welcomeToast: boolean
 };
