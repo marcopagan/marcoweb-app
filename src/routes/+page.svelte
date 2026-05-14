@@ -6,7 +6,7 @@
   import { STEP, getCoordinates, convertCoordinates } from "$lib/rectolib";
   import Recto from "$lib/components/Recto.svelte";
   //import Drawer from '$lib/components/Drawer.svelte';
-  import OptionsBox from "$lib/components/OptionsBox.svelte";
+  import OptionsBox from "$lib/components/OptionsBox__.svelte";
   import { options } from "$lib/shared.svelte";
   import type { ColorScheme } from "$lib/types/ColorScheme.js";
   import useLocalStorage from "$lib/store.svelte.js";
