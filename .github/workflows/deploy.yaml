@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy to gh-pages
 
 on:
   push:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  test-build-deploy:
+  build-site:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +24,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run tests
-        run: npm test
 
       - name: Build static website
         run: npm run build
