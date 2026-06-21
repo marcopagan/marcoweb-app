@@ -21,6 +21,7 @@
   // VARIABLES
   let optionsLoaded = $state(false);
   let toastVisibility = $state(false);
+  let emailToast = $state(false);
   // Windows properties
   let innerWidth = $state(0);
   let innerHeight = $state(0);
@@ -140,6 +141,12 @@
     }
   }
 
+  function copyEmail() {
+    emailToast = true;
+    navigator.clipboard.writeText('hello@marcopagan.com');
+    handleToast();
+  }
+
   function handleToast() {
     setTimeout(() => {
       toastVisibility = true;
@@ -218,6 +225,24 @@
 					<br /><button onclick={() => (options.openDrawer = !options.openDrawer)}>CV</button>-->
           </p>
         </Recto>
+
+      {:else if recto.content === "CONTACTS" && recto.visibility}
+        <Recto
+          id="r-{recto.id}"
+          type={options.showBorder ? "perma" : "transparent"}
+          x={recto.x}
+          y={recto.y}
+          wdt={recto.wdt}
+          hgt={recto.hgt}
+        >
+          <h3>CONTACTS</h3>
+          <p>
+            <button onclick={() => copyEmail()}>hello[at]marcopagan.com</button>
+          </p>
+          <p>
+            <a href='http://www.instagram.com/marcopagan' target='_blank' rel="noopener noreferrer">@marcopagan</a>
+          </p>
+        </Recto>
       {:else if recto.visibility}
         <Recto
           id="r-{recto.id}"
@@ -245,7 +270,9 @@
 </div>-->
   <OptionsBox />
   {#if toastVisibility && options.welcomeToast}
-    <RectoToast />
+    <RectoToast rowOne="Click and drag on the screen" rowTwo="to discover more content"/>
+  {:else if toastVisibility && emailToast}
+    <RectoToast rowOne="Email copied to the clipboard!"/>
   {/if}
 {/if}
 
